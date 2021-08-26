@@ -17,6 +17,17 @@
 
     <?php
 
+        $array = [ "nome" => 'Edoardo', "cognome" => 'Parisotto', "eta" =>   87];
+        $arrayKeys = array_keys($array); // ["nome","cognome","eta"];
+        // STAMPA nome : Edoardo, cognome: Parisotto, eta : 87
+
+        for($i = 0; $i < count($array); $i++ ) {
+            echo $array[$i]; 
+
+        }
+
+
+
         $classe = [
             [
                 "nome" => 'Edoardo',
@@ -50,12 +61,17 @@
 
         $calc = 0;
         
-
         for($i=0; $i < count($classe); $i++) {
             #ora dovrei stare a ciclare dentro a classi, dove ci sono tre elementi dentro:
+            for ($x=0; $x < count($classe[$i]['voti']); $x++){
+                // var_dump($classe[$i]['voti'][$x]); SONO I VOTI;
+                $calc += $classe[$i]['voti'][$x];
+                
+            }
+
             $nameSurname = $classe[$i]['nome'] . ' ' . $classe[$i]['cognome'] . ' ' . $calc . '<br>';
             echo $nameSurname;
-         
+            
         }
 
     ?>
