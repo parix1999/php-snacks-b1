@@ -17,22 +17,22 @@
 
     <?php
 
-        $array = [ "nome" => 'Edoardo', "cognome" => 'Parisotto', "eta" =>   87];
-        $arrayKeys = array_keys($array); // ["nome","cognome","eta"];
-        // STAMPA nome : Edoardo, cognome: Parisotto, eta : 87
+        // $array = [ "nome" => 'Edoardo', "cognome" => 'Parisotto', "eta" =>   87];
+        // $arrayKeys = array_keys($array); // ["nome","cognome","eta"];
+        // // STAMPA nome : Edoardo, cognome: Parisotto, eta : 87
 
-        for($i = 0; $i < count($array); $i++ ) {
-            echo $array[$i]; 
+        // for($i = 0; $i < count($array); $i++ ) {
+        //     echo $array[$i]; 
 
-        }
+        // }
 
 
 
         $classe = [
             [
-                "nome" => 'Edoardo',
-                "cognome" => 'Parisotto',
-                'voti' => [
+                "nome" => 'Primo',
+                "cognome" => 'Secondo',
+                $voti => [
                     10,
                     8,
                     9
@@ -41,16 +41,16 @@
             [
                 "nome" => 'Gianni',
                 "cognome" => 'Ciano',
-                'voti' =>[
+                $voti =>[
                     6,
-                    7,
+                    9,
                     6
                 ]
             ],
             [
                 "nome" => 'Pippo',
                 "cognome" => 'Baudo',
-                'voti' => [
+                $voti => [
                     9,
                     4,
                     5
@@ -59,21 +59,15 @@
             
         ];
 
-        $calc = 0;
         
         for($i=0; $i < count($classe); $i++) {
-            #ora dovrei stare a ciclare dentro a classi, dove ci sono tre elementi dentro:
-            for ($x=0; $x < count($classe[$i]['voti']); $x++){
-                // var_dump($classe[$i]['voti'][$x]); SONO I VOTI;
-                $calc += $classe[$i]['voti'][$x];
-                
-            }
-
-            $nameSurname = $classe[$i]['nome'] . ' ' . $classe[$i]['cognome'] . ' ' . $calc . '<br>';
-            echo $nameSurname;
-            
+           # Media:
+           $media = array_sum($classe[$i][$voti]) / count($classe[$i][$voti]);
+           // stampa a video:
+           echo "{$classe[$i]['nome']} {$classe[$i]['cognome']} {$media} <br> ";
         }
-
+        
+        
     ?>
 
 

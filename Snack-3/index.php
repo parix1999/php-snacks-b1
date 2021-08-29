@@ -58,11 +58,22 @@
             ],
         ];
 
+        # Prendere le chiavi dall'array di posts
+        # Ciclare con un for le chiavi incrementando
+        # Per ogni step del ciclo prendiamo i valori che ci servono
+        # dall'array originale.
         
-        for ($i=0; $i < count($posts); $i++) {
-            # Assegno il tutto ad una variabile: 
-            
-           
+        $postsKeys = array_keys($posts);
+        for ($i=0; $i < count($postsKeys); $i++) {
+            // Cosi abbiamo le chiavi dell'array:
+            $originalKey = $postsKeys[$i];
+            echo "{$originalKey} <br>";
+
+            # var_dump($posts[$originalKey]);
+            for ($x = 0; $x < count($posts[$originalkey]); $x++) {
+                $post = $posts[$originalKey][$x];
+                echo "<h2>{$post}</h2>" ;
+            }
         }
 
 
