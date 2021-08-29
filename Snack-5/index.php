@@ -16,7 +16,7 @@
 
         $newText = str_replace('.', '<p></p>', $text);
 
-        echo $newText; 
+        echo "<p> {$newText} </p>"; 
 
     ?>
 
